@@ -183,7 +183,8 @@ public class SpeechSynthesis extends CordovaPlugin implements OnInitListener, On
      * @param status
      */
     public void onInit(int status) {
-        if (status == TextToSpeech.SUCCESS) {
+        if (mTts != null && status == TextToSpeech.SUCCESS) { //if (status == TextToSpeech.SUCCESS) { 
+        //from tdurand but I don't know how to merge his request on github
             state = SpeechSynthesis.STARTED;
             JSONArray voices = new JSONArray();
             JSONObject voice;
